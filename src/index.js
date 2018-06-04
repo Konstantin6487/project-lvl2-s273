@@ -1,9 +1,8 @@
 import fs from 'fs';
 
-const parseFile = pathToFile =>
-  JSON.parse(fs.readFileSync(pathToFile, 'utf8'));
+const parseFile = pathToFile => JSON.parse(fs.readFileSync(pathToFile, 'utf8'));
 
-const genDiff = (pathToFile1, pathToFile2) => {
+export default (pathToFile1, pathToFile2) => {
   const [file1, file2] = [parseFile(pathToFile1), parseFile(pathToFile2)];
   const [keysFile1, keysFile2] = [Object.keys(file1), Object.keys(file2)];
 
@@ -38,8 +37,5 @@ const genDiff = (pathToFile1, pathToFile2) => {
     const outputStr = getKeyAction(key).action(key);
     return Array.isArray(outputStr) ? [...acc, ...outputStr] : [...acc, outputStr];
   }, []);
-  const output = `{\n${result.join('\n')}\n}`;
-  return output;
+  return `{\n${result.join('\n')}\n}`;
 };
-
-export default genDiff;
