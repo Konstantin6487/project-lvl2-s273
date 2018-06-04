@@ -3,7 +3,7 @@
 import program from 'commander';
 
 program
-  .version('0.0.3')
+  .version('0.0.4')
   .arguments('<firstConfig>, <secondConfig>')
   .option('-f, --format [type]', 'Output format');
 
