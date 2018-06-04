@@ -37,5 +37,5 @@ export default (pathToFile1, pathToFile2) => {
     const outputStr = getKeyAction(key).action(key);
     return Array.isArray(outputStr) ? [...acc, ...outputStr] : [...acc, outputStr];
   }, []);
-  return `{\n${result.join('\n')}\n}`;
+  return `{\n${result.join('\n')}\n}\n`;
 };
