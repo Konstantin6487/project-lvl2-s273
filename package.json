@@ -1,5 +1,5 @@
 {
-  "name": "gendiff",
+  "name": "gendiff_konstantin6487",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel": "babel",
     "babel-node": "babel-node",
-    "eslint": "eslint"
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "eslint": "eslint",
+    "prepublishOnly": "npm run build"
+  },
+  "bin": {
+    "gendiff": "dist/bin/gendiff.js"
   },
   "repository": {
     "type": "git",
