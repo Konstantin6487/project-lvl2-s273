@@ -1,0 +1,10 @@
+{
+    host: github.io
+    lang: ru
+    version: 101
+  + timeout: 40
+  - timeout: 0
+  + connection: false
+  - connection: true
+  - description: none
+}
