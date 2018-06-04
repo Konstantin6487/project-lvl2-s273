@@ -9,3 +9,6 @@ build:
 
 publish:
 	npm publish -s
+
+lint:
+	npm run eslint src
