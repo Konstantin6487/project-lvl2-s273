@@ -1,6 +1,6 @@
 {
   "name": "gendiff_bochinin",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,9 @@
     "url": "https://github.com/Konstantin6487/project-lvl2-s273/issues"
   },
   "homepage": "https://github.com/Konstantin6487/project-lvl2-s273#readme",
+  "dependencies": {
+    "commander": "2.15.1"
+  },
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
