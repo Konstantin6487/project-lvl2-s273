@@ -11,4 +11,7 @@ publish:
 	npm publish -s
 
 lint:
-	npm run eslint src
+	npm run eslint -- src test
+
+test:
+	npm test
