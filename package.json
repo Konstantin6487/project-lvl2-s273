@@ -1,7 +1,7 @@
 {
   "name": "gendiff_bochinin",
-  "version": "0.0.5",
-  "description": "",
+  "version": "0.0.7",
+  "description": "cli util",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
