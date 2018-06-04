@@ -27,7 +27,7 @@ const genDiff = (pathToFile1, pathToFile2) => {
       check: key => equalKeys.includes(key),
     },
     {
-      action: key => [`  + ${key}: ${file2[key]}`, `  - ${key}: ${file2[key]}`],
+      action: key => [`  + ${key}: ${file2[key]}`, `  - ${key}: ${file1[key]}`],
       check: key => changedKeys.includes(key),
     },
   ];
