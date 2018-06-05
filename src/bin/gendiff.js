@@ -4,7 +4,7 @@ import program from 'commander';
 import genDiff from '..';
 
 program
-  .version('0.0.7')
+  .version('0.0.8')
   .arguments('<firstConfig>, <secondConfig>')
   .option('-f, --format [type]', 'Output format')
   .action((firstConfig, secondConfig) => console.log(genDiff(firstConfig, secondConfig)));
