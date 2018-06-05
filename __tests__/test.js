@@ -2,14 +2,26 @@ import fs from 'fs';
 import genDiff from '../src';
 
 
-test('Test N1', () => {
-  const expectedN1 = fs.readFileSync('./__tests__/__fixtures__/file_result_1', 'utf8');
-  const resultN1 = genDiff('./__tests__/__fixtures__/file_before_1.json', './__tests__/__fixtures__/file_after_1.json');
+test('Test N1.json', () => {
+  const expectedN1 = fs.readFileSync('./__tests__/__fixtures__/test1_result', 'utf8');
+  const resultN1 = genDiff('./__tests__/__fixtures__/test1_before.json', './__tests__/__fixtures__/test1_after.json');
   expect(resultN1).toBe(expectedN1);
 });
 
-test('Test N2', () => {
-  const expectedN2 = fs.readFileSync('./__tests__/__fixtures__/file_result_2', 'utf8');
-  const resultN2 = genDiff('./__tests__/__fixtures__/file_before_2.json', './__tests__/__fixtures__/file_after_2.json');
+test('Test N1.yml', () => {
+  const expectedN1 = fs.readFileSync('./__tests__/__fixtures__/test1_result', 'utf8');
+  const resultN1 = genDiff('./__tests__/__fixtures__/test1_before.yml', './__tests__/__fixtures__/test1_after.yml');
+  expect(resultN1).toBe(expectedN1);
+});
+
+test('Test N2.json', () => {
+  const expectedN2 = fs.readFileSync('./__tests__/__fixtures__/test2_result', 'utf8');
+  const resultN2 = genDiff('./__tests__/__fixtures__/test2_before.json', './__tests__/__fixtures__/test2_after.json');
+  expect(resultN2).toBe(expectedN2);
+});
+
+test('Test N2.yml', () => {
+  const expectedN2 = fs.readFileSync('./__tests__/__fixtures__/test2_result', 'utf8');
+  const resultN2 = genDiff('./__tests__/__fixtures__/test2_before.yml', './__tests__/__fixtures__/test2_after.yml');
   expect(resultN2).toBe(expectedN2);
 });
