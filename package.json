@@ -1,6 +1,6 @@
 {
   "name": "gendiff_bochinin",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "cli util",
   "main": "dist/index.js",
   "bin": {
