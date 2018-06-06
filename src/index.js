@@ -17,17 +17,21 @@ const getParser = format => (data) => {
   return parse(data);
 };
 
-const readParseData = (pathToFile) => {
+const readData = (pathToFile) => {
   const format = path.extname(pathToFile);
   const data = fs.readFileSync(pathToFile, 'utf8');
-  const parse = getParser(format);
-  const config = parse(data);
+  return { format, data };
+};
+
+const parseData = (dateObj) => {
+  const parse = getParser(dateObj.format);
+  const config = parse(dateObj.data);
   return config;
 };
 
 export default (pathToFile1, pathToFile2) => {
-  const file1 = readParseData(pathToFile1);
-  const file2 = readParseData(pathToFile2);
+  const file1 = parseData(readData(pathToFile1));
+  const file2 = parseData(readData(pathToFile2));
   const filesKeys = _.union(Object.keys(file1), Object.keys(file2));
   const result = filesKeys.map((key) => {
     if (!_.has(file1, key)) {
