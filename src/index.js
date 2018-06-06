@@ -23,9 +23,9 @@ const readData = (pathToFile) => {
   return { format, data };
 };
 
-const parseData = (dateObj) => {
-  const parse = getParser(dateObj.format);
-  const config = parse(dateObj.data);
+const parseData = (dataObj) => {
+  const parse = getParser(dataObj.format);
+  const config = parse(dataObj.data);
   return config;
 };
 
