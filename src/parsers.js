@@ -1,7 +1,5 @@
 import yaml from 'js-yaml';
 import ini from 'ini';
-import fs from 'fs';
-import path from 'path';
 
 const parsers = {
   '.json': JSON.parse,
@@ -18,16 +16,8 @@ const getParser = format => (data) => {
   return parse(data);
 };
 
-const readData = (pathToFile) => {
-  const format = path.extname(pathToFile);
-  const data = fs.readFileSync(pathToFile, 'utf8');
-  return { format, data };
-};
-
-const parseData = (dataObj) => {
-  const parse = getParser(dataObj.format);
-  const config = parse(dataObj.data);
+export default (data, format) => {
+  const parse = getParser(format);
+  const config = parse(data);
   return config;
 };
-
-export { readData, parseData };
